@@ -1,170 +1,106 @@
-@charset "UTF-8";
+/* すべての要素のサイズの計算方法をborder・paddingを含む数値にする */
+* {
+    box-sizing: border-box;
+}
+
 body {
-	background-color: #F2F2F2;
-	margin: 0;
-	padding: 0;
-	line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
 }
-#outer {
-	margin: 2% auto;
-	width: 1000px;
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+
+.icon {
+    position: relative; /* 子要素の基準位置とする */
+    width: fit-content; /* p要素の幅を画像に合わせる（重要） */
+    margin: 0 auto; /* 中央寄せしたい場合 */
+    position: relative;
 }
-header {
-	height: 120px;
+
+.icon img {
+    /* 絶対配置を設定 */
+    position: absolute;
+
+    /* 親要素の左下隅を基準にする */
+    bottom: 0;
+    left: 0;
+
+    /* （任意）さらに内側に少し寄せたい場合 */
+    /* bottom: 10px;
+    left: 10px; */
 }
-#header-inner {
-	padding: 30px;
+
+.picture1 {
+    text-align: center; /* 画像（インライン要素）を中央揃えにする */
+    /* 上下の余白（任意） */
+    margin: 20px 0;
 }
-.description {
-	font-size: 16px;
-	color: #666;
+
+.container {
+    width: 100%; /*幅を親要素（ウィンドウサイズ）に合わせる*/
+    max-width: 1200px; /* 最大幅を1200pxにする（1200px以上に広がらないようにする） */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #E9EBEF;
+    border-radius: 8px;
 }
-h1 {
-	font-size: 28px;
-	color: #333;
-	padding: 0;
-	margin: 0;
+
+.main-visual {
+    height: 400px;
+    background: #4F46E5; /*  */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    border-radius: 6px;
+    margin-bottom: 20px;
 }
-h1 a {
-	font-weight: bold;
-	color: #8c0000;
-	text-decoration: none;
+
+/* PC版のコンテンツカラム：横に2分割 */
+.content-columns {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
-h1 a:hover {
-	text-decoration: underline;
+.content-columns > div {
+    width: 50%;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
 }
-h2 {
-	font-size: 24px;
-	margin: 0;
-	padding: 0 0 5px 0;
-	border-bottom: 1px solid #999;
+
+.mobile-menu-toggle {
+    display: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
 }
-h3 {
-	font-size: 20px;
-	padding: 15px 0 5px 0;
+.hidden-content {
+    padding: 15px;
+    background-color: #e0f7fa;
+    border: 1px solid #00bcd4;
+    border-radius: 4px;
+    margin-bottom: 20px;
 }
-#content {
-	float: right;
-	width: 70%;
-}
-.inner {
-	padding: 20px 30px 20px 0;
-}
-ul {
-	margin: 0 0 0 1em;
-	padding: 0;
-}
-li {
-	list-style: disc;
-}
-p {
-	margin: 1em 0;
-}
-.aka {
-	color: #B0231D;
-	font-weight: bold;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border: 0;
-}
-hr {
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	border-color: #ccc;
-	height: 1px;
-}
-a {
-	color: #003366;
-}
-aside {
-	color: #676767;
-	width: 30%;
-	float: left;
-}
-#side-inner {
-	padding: 20px 30px;
-}
-.side-title {
-	padding: 10px 15px;
-	margin: 0;
-	font-weight: bold;
-	color: #E3E3E2;
-	background: #003366;
-	border-radius: 5px 5px 0 0;
-}
-.side {
-	background-color: #fcfcfc;
-	padding: 10px;
-	margin: 0 0 15px 0;
-	font-weight: bold;
-	border: 1px #dcdcdc solid;
-	border-radius: 0 0 5px 5px;
-}
-.side a {
-	color: #036;
-	text-decoration: none;
-}
-.side a:hover {
-	text-decoration: underline;
-}
-.side ul {
-	margin: 0 0 1em 0;
-	padding: 0;
-}
-.side li {
-	padding: 5px 0;
-	margin: 0;
-	list-style: none;
-}
-footer {
-	padding-top: 20px;
-	font-size: 14px;
-	height: 100px;
-	clear: both;
-	text-align: center;
-	color: #444;
-	background-color: #F2F2F2;
-}
-footer a {
-	color: #444;
-}
-blockquote {
-	border: 1px solid #ccc;
-	padding: 20px;
-	margin: 10px;
-	font-style: italic;
-}
-@media screen and (max-width: 600px) {
-#outer {
-	width: 100%;
-	margin: 0;
-}
-#header-inner {
-	padding: 20px;
-}
-h1 {
-	font-size: 22px;
-	color: #333;
-	padding: 0;
-	margin: 0;
-}
-#content {
-	width: 100%;
-	float: none;
-}
-.inner {
-	padding: 20px 15px;
-}
-aside {
-	width: 100%;
-	float: none;
-}
-#side-inner {
-	padding: 15px;
-}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .hidden-content {
+        display: none;
+    }
+
+    .content-columns {
+        flex-direction: column;
+   }
+
+   .content-columns > div {
+        width: 100%;
+   }
 }
