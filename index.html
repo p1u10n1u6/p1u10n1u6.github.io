@@ -1,42 +1,55 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>あなたのＨＰタイトル</title>
-<meta name="description" content="ページの説明">
-<meta name="keywords" content="ページのキーワードA,B,C">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="index.css">
-</head>
-<body>
-<div id="outer">
-<header>
-<div id="header-inner">
-<h1>あなたのＨＰタイトル</h1>
-<p class="description">あなたのＨＰの説明文</p>
-</div>
-</header>
-<div id="content">
-<div class="inner"><h2>記事ページ見出し・大</h2>
-<p>文章あれこれ</p>
-<h3>記事ページ見出し・中</h3>
-<p>文章あれこれ</p>
-<h4>記事ページ見出し・小</h4>
-<p>文章あれこれ</p>
-</div>
-</div>
-<aside>
-<div id="side-inner">
-<div class="side-title">サイドバータイトル</div>
-<div class="side">
-<ul>
-<li>記事ページへのリンク</li>
-<li>記事ページへのリンク</li>
-</ul>
-</div>
-</div>
-</aside>
-<footer>テスト</footer>
-</div></body>
-</html>
+    <!DOCTYPE html>
+    <html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>新折紙展</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style_.css">
+        <script src="jquery-3.7.1.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $('.mobile-menu-toggle').click(function(){
+                $('.hidden-content').slideToggle(500);
+            });
+          }
+        );
+        </script>
+    </head>
+    <body>
 
+    <p class ="icon">
+        <img src="new_o_title.svg" alt="新折紙展">
+    </p>
+    <p class ="picture1">
+        <img src="main_demo.png" width="861" height="648"alt="pc1">
+        </p>
+        <div class="container">
+            <!-- ファーストビューのメインビジュアル要素 -->
+            <div class="main-visual">
+                ファーストビュー
+            </div>
+
+            <!-- モバイルでのみ表示するトグルボタン -->
+            <div class="mobile-menu-toggle">
+                詳細情報はこちら
+            </div>
+
+            <!-- PCでは常時表示、モバイルでは初期非表示のコンテンツ -->
+            <div class="hidden-content">
+                <p>このブロックは、PCでは常に表示されますが、モバイルでは「詳細情報を見る」をタップすることで初めて表示されます。</p>
+                <p>限られたモバイル画面をシンプルに保つためのテクニックです。</p>
+            </div>
+
+            <div class="content-columns">
+                <div>
+                    <h2>左側のコンテンツ</h2>
+                    <p>PCではこのブロックは横に並びます。モバイルでは縦に積み重なります。</p>
+                </div>
+                <div>
+                    <h2>右側のコンテンツ</h2>
+                    <p>メディアクエリにより、レイアウトが切り替わる様子を観察しましょう。</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
